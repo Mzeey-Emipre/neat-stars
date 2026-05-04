@@ -20,8 +20,9 @@
   },
   "devDependencies": {
     "@wxt-dev/module-vue": "^1.0.0",
-    "wxt": "^0.19.0",
+    "sharp": "^0.34.5",
     "typescript": "^5.7.0",
-    "vue-tsc": "^2.2.0"
+    "vue-tsc": "^2.2.0",
+    "wxt": "^0.19.0"
   }
 }
