@@ -1,0 +1,8 @@
+name = "neat-stars-api"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "neat-stars-db"
+database_id = "placeholder-will-be-set-after-d1-creation"
