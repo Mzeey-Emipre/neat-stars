@@ -47,7 +47,13 @@ jobs:
     runs-on: blacksmith-4vcpu-ubuntu-2404
     strategy:
       matrix:
-        browser: [chrome, firefox, edge]
+        include:
+          - browser: chrome
+            manifest: mv3
+          - browser: firefox
+            manifest: mv2
+          - browser: edge
+            manifest: mv3
     steps:
       - uses: actions/checkout@v4
 
@@ -65,12 +71,16 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: neat-stars-${{ matrix.browser }}
-          path: src/extension/.output/${{ matrix.browser }}-mv3/
+          path: src/extension/.output/${{ matrix.browser }}-${{ matrix.manifest }}/
 
   build-worker:
     runs-on: blacksmith-4vcpu-ubuntu-2404
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
       - uses: oven-sh/setup-bun@v2
         with:

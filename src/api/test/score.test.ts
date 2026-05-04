@@ -37,7 +37,7 @@ describe('GET /api/score/:owner/:repo', () => {
 
     const res = await app.request('/api/score/facebook/react', {}, env);
     expect(res.status).toBe(200);
-    const body = await res.json();
+    const body = await res.json() as { owner: string; repo: string; clean_pct: number };
     expect(body.owner).toBe('facebook');
     expect(body.repo).toBe('react');
     expect(body.clean_pct).toBe(87.0);
@@ -47,7 +47,7 @@ describe('GET /api/score/:owner/:repo', () => {
     const env = createMockEnvWithScore(null);
     const res = await app.request('/api/score/unknown/repo', {}, env);
     expect(res.status).toBe(404);
-    const body = await res.json();
+    const body = await res.json() as { status: string };
     expect(body.status).toBe('no_data');
   });
 });

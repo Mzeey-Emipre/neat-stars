@@ -23,7 +23,7 @@ describe('GET /api/health', () => {
     const env = createMockEnv();
     const res = await app.request('/api/health', {}, env);
     expect(res.status).toBe(200);
-    const body = await res.json();
+    const body = await res.json() as { status: string; timestamp: string };
     expect(body.status).toBe('ok');
     expect(body.timestamp).toBeDefined();
   });
@@ -39,7 +39,7 @@ describe('GET /api/health', () => {
     } as unknown as Partial<D1Database>);
     const res = await app.request('/api/health', {}, env);
     expect(res.status).toBe(503);
-    const body = await res.json();
+    const body = await res.json() as { status: string };
     expect(body.status).toBe('error');
   });
 });
