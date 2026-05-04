@@ -1,0 +1,14 @@
+{
+  "name": "neat-stars",
+  "private": true,
+  "workspaces": ["src/extension", "src/api"],
+  "scripts": {
+    "dev:ext": "bun run --cwd src/extension dev",
+    "dev:api": "bun run --cwd src/api dev",
+    "build:ext": "bun run --cwd src/extension build",
+    "build:api": "bun run --cwd src/api build",
+    "lint": "eslint src/",
+    "typecheck": "bun run --cwd src/extension typecheck && bun run --cwd src/api typecheck",
+    "test": "bun run --cwd src/api test"
+  }
+}
