@@ -1,0 +1,53 @@
+.neat-stars-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  border-left: 1px solid var(--borderColor-default, #30363d);
+  padding-left: 8px;
+  margin-left: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: default;
+  position: relative;
+}
+
+.neat-stars-badge.green { color: #3fb950; }
+.neat-stars-badge.yellow { color: #d29922; }
+.neat-stars-badge.red { color: #f85149; }
+.neat-stars-badge.grey { color: #8b949e; }
+
+.neat-stars-badge .neat-stars-icon {
+  font-size: 11px;
+}
+
+.neat-stars-tooltip {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #1c2128;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #e6edf3;
+  white-space: nowrap;
+  z-index: 100;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.neat-stars-badge:hover .neat-stars-tooltip {
+  display: block;
+}
+
+.neat-stars-tooltip .tooltip-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  line-height: 1.6;
+}
+
+.neat-stars-tooltip .tooltip-label {
+  color: #8b949e;
+}
